@@ -68,6 +68,6 @@ app.post("/:busca", async (req, res) => {
     pageContent,
     patchs,
   };
-
+  console.log(retorno) // resultado tambem terá como saida um console.log()
   return res.send(retorno); // resultado em tela para requisição
 });
