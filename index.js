@@ -1,7 +1,10 @@
 const puppeteer = require("puppeteer");
 const express = require("express");
+const cors = require("cors");
 const app = express();
 app.use(express.json());
+
+app.use(cors());
 app.listen(3000).address("0.0.0.0", () => {
   console.log("Running server");
 });
@@ -9,7 +12,7 @@ app.listen(3000).address("0.0.0.0", () => {
 app.post("/:busca", async (req, res) => {
   // rota de consulta
   const { gerarPDF, gerarPRINT } = req.body;
-  const busca = req.params.busca; 
+  const busca = req.params.busca;
 
   //biblioteca puppeteer para automação
   const Elementbusca = busca;
@@ -42,12 +45,18 @@ app.post("/:busca", async (req, res) => {
   } // caso o usuario queira gerar um PDF da pagina.
 
   if (gerarPRINT === "true") {
-    await pagina.screenshot({ path: "captura.png" }); // caso o usuario queira gerar um Screenshot da pagina.
+    await pagina.screenshot({ path: "./captura.png" }); // caso o usuario queira gerar um Screenshot da pagina.
   }
 
-  console.log("Resultado:", pageContent); // resultado no consolle
-  return res.send(`<ul>
-    <li>${pageContent.title01} </li>
-    <li>${pageContent.title02} </li>
-  </ul>`); // resultado em tela para requisição
+  const patchs = {
+    patchIMG: __dirname + "/captura.png",
+    patchPDF: __dirname + "/webpage.pdf",
+  };
+
+  const retorno = {
+    pageContent,
+    patchs,
+  };
+
+  return res.send(retorno); // resultado em tela para requisição
 });
