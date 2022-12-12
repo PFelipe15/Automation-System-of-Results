@@ -5,7 +5,8 @@ Desafio, Desenvolver uma consulta no google retornando o titulo dos dois primeir
 	 
   --Sistema de consulta de Titulos do google.
   !É necessario um software para fazer as requisições, ex: postman, insonmia.
-
+     
+       
   !Faça uma requisição do tipo POST, colocando a url padrão de localhost
   ex:"http://localhost:3000/ITEM-DE-PESQUISA"
   
@@ -18,3 +19,6 @@ Desafio, Desenvolver uma consulta no google retornando o titulo dos dois primeir
   } 
 
  caso não queira mais criar ou gerar um pdf mude de "true" para "false".
+ 
+ 
+ Para este Desafio criei tambêm um frontend para consumir
