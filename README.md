@@ -10,6 +10,9 @@ Desafio, Desenvolver uma consulta no google retornando o titulo dos dois primeir
   !Faça uma requisição do tipo POST, colocando a url padrão de localhost
   ex:"http://localhost:3000/ITEM-DE-PESQUISA"
   
+  !É recomendado consumir os dados enviados pelo servidor através de uma interface visual, especificamente:
+  https://github.com/PFelipe15/Automation_searchResult.
+   
   !Caso você queira tirar uma PrintScreen da tela de pesquisa e ou queira que o sistema crie um PDP
   da pagina automaticamente, crie um objeto JSON com os seguintes parametros:
    
