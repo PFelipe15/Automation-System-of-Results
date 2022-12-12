@@ -49,9 +49,20 @@ app.post("/:busca", async (req, res) => {
   }
 
   const patchs = {
-    patchIMG: __dirname + "/captura.png",
     patchPDF: __dirname + "/webpage.pdf",
+    patchIMG: __dirname + "/captura.png",
   };
+
+  if (gerarPRINT != "true" && gerarPDF != "true") {
+    patchs.patchPDF = "PDF não Solicitado";
+    patchs.patchIMG = "Screenshot não Solicitado";
+  }
+  if (gerarPRINT != "true") {
+    patchs.patchIMG = "Screenshot não Solicitado";
+  }
+  if (gerarPDF  != "true") {
+    patchs.patchPDF = "PDF não Solicitado";
+  }
 
   const retorno = {
     pageContent,
