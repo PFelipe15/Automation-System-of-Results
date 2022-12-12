@@ -1,18 +1,20 @@
 # Challenger02
 Desafio, Desenvolver uma consulta no google retornando o titulo dos dois primeiros resultados.
  
-  --Sistema de consulta de Titulo do google, o usuario por meio de requsições--
+    !Após entrar na pasta clonada dê um npm i
+	 
+  --Sistema de consulta de Titulos do google.
   !É necessario um software para fazer as requisições, ex: postman, insonmia.
 
   !Faça uma requisição do tipo POST, colocando a url padrão de localhost
-  ex:"http://localhost:PORT/ITEM-DE-PESQUISA"
+  ex:"http://localhost:3000/ITEM-DE-PESQUISA"
   
-  !Caso você queira tirar uma PrintScreen da tela de pesquisa e queira que o sistema crie um PDP
-  automaticamente crie um objeto JSON com os seguintes parametros:
+  !Caso você queira tirar uma PrintScreen da tela de pesquisa e ou queira que o sistema crie um PDP
+  da pagina automaticamente, crie um objeto JSON com os seguintes parametros:
    
   {
-	      "gerarPDF": "false", 
-	      "gerarPRINT": "false"
+	      "gerarPDF": "true", 
+	      "gerarPRINT": "true"
   } 
 
- caso queirar criar ou gerar um pdf mude de "false" para "true".
+ caso não queira mais criar ou gerar um pdf mude de "true" para "false".
